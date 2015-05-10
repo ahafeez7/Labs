@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+
+  {% include head.html %}
+  <body>
+    <div class="page-content">
+      <div class="wrapper notebook-bg">
+        {% include header.html %}
+        {{ content }}
+        {% include references.html %}
+        {% include paginate.html %}
+      </div>
+      <div class="wrapper">
+      {% include disqus.html %}
+      </div>
+
+
+
+      </div>
+
+
+    </div>
+    {% include footer.html %}
+
+  </body>
+
+</html>

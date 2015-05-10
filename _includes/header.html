@@ -1,0 +1,30 @@
+<header id="controls">
+<div class="dropdown" style="float:right">
+  <div class="btn-group">
+
+  <button class="btn btn-default" type="button" >
+    <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/III-icon.png" style="border:0;" ></a>
+  </button>
+
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="height:54px;">
+    <span class="octicon octicon-chevron-down"></span></span>
+  </button>
+
+
+
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    {% for pages in site.pages %}
+    {% if pages.title %}
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{site.baseurl}}{{pages.permalink}}">{{pages.title}}</a></li>
+
+    {% endif %}
+    {% endfor %}
+
+  </ul>
+</div>
+</div>
+</header>
+
+<script>
+$('#controls').draggable()
+</script>

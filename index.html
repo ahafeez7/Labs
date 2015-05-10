@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading" style="font-size: 40px">Materials Informatics Labs</h1>
+
+  <ul class="post-list">
+      {% for post in paginator.posts %}
+{% assign author={{site.data.instructors | map:post.author }} %}
+
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> {% if {{author[0].name}} %}<small><small>by {{author[0].name}}</small></small>{% endif %}
+        </h2>
+        {% if post.tagline %}
+        <p><i>
+          {{post.tagline}}
+        </i></p>
+        {% endif %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </li>
+
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
